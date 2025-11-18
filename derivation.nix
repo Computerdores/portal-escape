@@ -1,4 +1,4 @@
-{ pkgs, lib }:
+{ pkgs, stdenv, lib }:
 
 let
   runtimeInputs = with pkgs; [
@@ -8,7 +8,7 @@ let
     logger
   ];
 in
-pkgs.stdenv.mkDerivation {
+stdenv.mkDerivation {
   name = "portal-escape";
   src = ./.;
   buildInputs = runtimeInputs;
@@ -19,4 +19,11 @@ pkgs.stdenv.mkDerivation {
     wrapProgram $out/bin/portal-escape \
       --prefix PATH : ${lib.makeBinPath runtimeInputs}
   '';
+
+  meta = {
+    description = "A NetworkManager dispatcher script to automatically dismiss captive portals.";
+    homepage = https://github.com/Computerdores/portal-escape;
+    license = lib.licenses.agpl3Only;
+    platform = lib.platforms.all;
+  };
 }
