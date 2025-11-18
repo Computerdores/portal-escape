@@ -41,7 +41,6 @@ fi
 # answer according to detected type
 case "$REDIRECT_URL" in
     https://wifi.bahn.de*)
-        # TODO: final test
         curl -X POST 'https://wifi.bahn.de/cna/logon'
         ;;
     http://login.wifionice.de/cna/*)
