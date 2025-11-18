@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib }:
 
 let
   runtimeInputs = with pkgs; [
@@ -9,7 +9,6 @@ let
   ];
 in
 pkgs.stdenv.mkDerivation {
-  pname = "portal-escape";
   name = "portal-escape";
   src = ./.;
   buildInputs = runtimeInputs;
