@@ -25,5 +25,6 @@ stdenv.mkDerivation {
     homepage = https://github.com/Computerdores/portal-escape;
     license = lib.licenses.agpl3Only;
     platform = lib.platforms.all;
+    mainProgram = "portal-escape";
   };
 }
