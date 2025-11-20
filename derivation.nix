@@ -24,6 +24,7 @@ stdenv.mkDerivation {
     description = "A NetworkManager dispatcher script to automatically dismiss captive portals.";
     homepage = https://github.com/Computerdores/portal-escape;
     license = lib.licenses.agpl3Only;
+    sourceProvenance = [ lib.sourceTypes.fromSource ];
     platform = lib.platforms.all;
     mainProgram = "portal-escape";
   };
