@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+TODO: switch to using wg/wg-quick for wireguard functionality
 
 # prepare logger
 function log() {
